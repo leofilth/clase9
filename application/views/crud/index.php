@@ -25,7 +25,7 @@
             echo "<td>".$dato->correo."</td>";
             echo "<td>".$dato->tel."</td>";
             echo "<td>".$dato->fecha."</td>";
-            echo "<td><a href=''>Editar</a>  <a href=''>Eliminar</a></td>";
+            echo "<td><a href=".base_url()."crud/edit/".$dato->id.">Editar</a>  <a href=''>Eliminar</a></td>";
             echo "</tr>";
         }
 

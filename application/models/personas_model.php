@@ -18,5 +18,21 @@ class personas_model extends CI_Model {
         $this->db->insert("personas",$datos);
         return true;
     }
+    public function getPersonaPorId($id)
+    {
+        $where=array("id"=>$id);
+        $query=$this->db
+            ->select("id,nombre,correo,telefono,fecha")
+            ->from("personas")
+            ->where($where)
+            ->get();
+        return $query->row();
+    }
+    public function modificar_persona($datos=array(),$id)
+    {
+        $this->db->where('id',$id);
+        $this->db->update('personas',$datos);
+        return true;
+    }
 
 }
