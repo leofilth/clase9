@@ -29,11 +29,11 @@ class Crud extends CI_Controller {
                 $guardar=$this->personas_model->insertar_persona($data);
                 if($guardar)
                 {
-                    $this->session->set_flashdata('ControllerMessagge','Se ha agregado exitosamente el registro');
+                    $this->session->set_flashdata('ControllerMessage','Se ha agregado exitosamente el registro');
                     redirect(base_url().'crud',301);
                 }
                 else{
-                    $this->session->set_flashdata('ControllerMessagge','Se ha producido un error');
+                    $this->session->set_flashdata('ControllerMessage','Se ha producido un error');
                     redirect(base_url().'crud/add',301);
                 }
             }
@@ -59,11 +59,11 @@ class Crud extends CI_Controller {
                 $guardar=$this->personas_model->modificar_persona($data,$id);
                 if($guardar)
                 {
-                    $this->session->set_flashdata('ControllerMessagge','Se ha editado exitosamente el registro');
+                    $this->session->set_flashdata('ControllerMessage','Se ha editado exitosamente el registro');
                     redirect(base_url().'crud',301);
                 }
                 else{
-                    $this->session->set_flashdata('ControllerMessagge','Se ha producido un error');
+                    $this->session->set_flashdata('ControllerMessage','Se ha producido un error');
                     redirect(base_url().'crud/edit/'.$id,301);
                 }
             }
@@ -76,5 +76,20 @@ class Crud extends CI_Controller {
             show_404();
         }
         $this->layout->view("edit",compact("id","datitos"));
+    }
+    public function delete($id=null)
+    {
+        if(!$id){show_404();}
+        $guardar=$this->personas_model->eliminar($id);
+        if($guardar)
+        {
+            $this->session->set_flashdata('ControllerMessage','Se ha eliminado exitosamente el registro');
+            redirect(base_url().'crud',301);
+        }
+        else{
+            $this->session->set_flashdata('ControllerMessage','Se ha producido un error');
+            redirect(base_url().'crud',301);
+        }
+
     }
 }

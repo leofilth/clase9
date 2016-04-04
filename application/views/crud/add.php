@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" xmlns="http://www.w3.org/1999/html">
     <h1>Agregar Persona</h1>
     <a href="<?php echo base_url()?>crud">Volver Atrás</a>
     <h3>Ingrese campos de formulario</h3>
@@ -58,17 +58,10 @@
     </div>
     <div class="row">
         <div class="col-md-5">
-            <?php
-            $datos=array
-            (
-                'name'=>'boton',
-                'id'=>'boton',
-                'type'=>'submit',
-                'class'=>"btn btn-primary btn-md",
-                'value'=>'Enviar'
-            );
-            echo form_submit($datos);
-            ?>
+            <button type="submit" name="boton" id="boton" class="btn btn-primary btn-md">
+                <span class="glyphicon glyphicon-save"></span> Guardar
+            </button>
+
         </div>
     </div>
     <?php

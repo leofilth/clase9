@@ -34,5 +34,10 @@ class personas_model extends CI_Model {
         $this->db->update('personas',$datos);
         return true;
     }
+    public function eliminar($id)
+    {
+        $this->db->delete("personas",array("id"=>$id));
+        return true;
+    }
 
 }
