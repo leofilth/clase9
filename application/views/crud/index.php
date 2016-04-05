@@ -15,7 +15,7 @@
         <span class="glyphicon glyphicon-plus"></span> Agregar
     </button>
     <h3>Lista de Personas</h3>
-    <table class="table table-striped table-hover">
+    <table class="table table-striped table-hover table-responsive">
         <tr class="info">
             <th>ID</th>
             <th>Nombre</th>
@@ -43,7 +43,6 @@
                     <button type="button" class=" btn btn-danger btn-sm" onclick="location.href='<?php echo base_url()?>crud/delete/<?php echo $dato->id?>'">
                         <span class="glyphicon glyphicon-remove"></span> Eliminar
                     </button>
-
                     <!--<a href="javascript:void(0);"onclick="eliminar('<?php echo base_url()?>crud/delete/<?php echo $dato->id?>')">
                         Eliminar
                     </a>-->
